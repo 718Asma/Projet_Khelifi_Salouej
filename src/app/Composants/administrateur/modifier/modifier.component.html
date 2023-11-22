@@ -1,0 +1,65 @@
+<br>
+<div *ngIf="act" class="container">
+    <h3> Modifier l'activité "{{act.intitule}}"</h3>
+    <br>
+    <form [formGroup]="activityForm"(ngSubmit)="onSubmitForm()">
+        <div>
+            <label><strong> Id </strong></label><br>
+            <input type="text" class="form-control" name="id" formControlName="id">
+        </div>
+        <div>
+            <label><strong> Intitule </strong></label><br>
+            <input type="text" class="form-control" name="intitule" formControlName="intitule">
+        </div>
+        <div>
+            <label><strong> Image </strong></label><br>
+            <input type="text" class="form-control" name="image" formControlName="image">
+        </div>
+        <div>
+            <label><strong> Description </strong></label><br>
+            <input type="text" class="form-control" name="description" formControlName="description">
+        </div>
+        <div>
+            <label><strong> Nombre de Participants </strong></label><br>
+            <input type="number" class="form-control" name="nbParticipants" formControlName="nbParticipants">
+        </div><br>
+        <div class="form-group form-check">
+            <label class="form-check-label"><strong> Complet </strong> &nbsp; 
+                <input type="checkbox" name="complet" formControlName="complet">
+            </label>
+        </div><br>
+        <div>
+            <label><strong> Date </strong></label><br>
+            <input type="date" class="form-control" name="date" formControlName="date">
+        </div>
+        <div>
+            <label><strong> Lieu </strong></label><br>
+            <input type="text" class="form-control" name="lieu" formControlName="lieu">
+        </div>
+        <br>
+        <hr>
+        <h3>Définition des participants</h3>
+        <div formArrayName="lesParticipants">
+            <div *ngFor="let participant of participantsFormArray.controls; let i = index" [formGroupName]="i">
+                <h5>Participant n°{{i + 1}}</h5>
+                <label><strong>CIN</strong></label>
+                <input type="text" class="form-control" formControlName="cin">
+                <label><strong>Nom</strong></label>
+                <input type="text" class="form-control" formControlName="nom">
+                <label><strong>Prenom</strong></label>
+                <input type="text" class="form-control" formControlName="prenom">
+                <label><strong>Age</strong></label>
+                <input type="number" class="form-control" formControlName="age">
+                <label><strong>Genre</strong></label>
+                <input type="text" class="form-control" formControlName="genre">
+                <label><strong>Photo</strong></label>
+                <input type="text" class="form-control" formControlName="photo">
+                <hr>
+            </div>
+        </div>
+        <br>
+        <input type="submit" value="Enregistrer" class="btn btn-light">&nbsp;
+        <input type="button" value="Retour" class="btn btn-light" (click)="revenir()">
+    </form>
+</div>
+<br><br>

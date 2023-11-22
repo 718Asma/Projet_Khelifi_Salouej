@@ -1,0 +1,13 @@
+<div class="text-center card" style="width: 410px;">
+	<br>
+	<h5 class="card-title">{{a.intitule}}</h5>
+	<hr>
+	<p class="card-body">
+	<img [src]="a.image" [alt]="a.intitule" width="200px" height="200px" class="rounded-circle"/><br><br>
+	</p>
+	<p class="card-footer">
+        <button class="btn btn-dark" [routerLink]="['/admin/activity', a.id]"><i class="fas fa-info-circle"></i> Consulter </button> &nbsp;
+        <button class="btn btn-dark" [routerLink]="['/admin/activity/modifier', a.id]"><i class="fas fa-edit"></i> Modifier </button> &nbsp;
+        <button class="btn btn-dark" (click)="supprimer(a.id)"><i class="fa fa-trash" aria-hidden="true"></i> Supprimer </button>
+	</p>
+</div>

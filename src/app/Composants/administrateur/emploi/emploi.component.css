@@ -1,0 +1,45 @@
+table
+{
+    width: 95%;
+    border-collapse: collapse;
+    margin: 20px;
+}
+
+th, td
+{
+    border: 1px solid #ddd;
+    width: 100px;
+    text-align: center;
+    padding: 8px;
+}
+
+th
+{
+    background-color: #f2f2f2;
+    font-weight: bolder;
+}
+
+td
+{
+    height: 100px;
+}
+
+button
+{
+    float: right;
+    margin-right: 70px;
+}
+
+div
+{
+    width: 550px;
+    height: 325px;
+    margin: auto;
+    border: 2px dashed black;
+    padding: 25px;
+}
+
+.nov
+{
+    color: rgb(175, 175, 175);
+}

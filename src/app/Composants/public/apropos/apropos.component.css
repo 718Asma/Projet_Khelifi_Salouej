@@ -1,0 +1,16 @@
+p
+{
+    margin-left: 50px;
+    margin-right: 50px;
+    text-align: justify;
+    line-height: 35px;
+    font-size: 25px;
+}
+
+.drop-cap {
+    font-size: 55px;
+    font-weight: bold;
+    float: left;
+    margin-right: 5px;
+  }
+  

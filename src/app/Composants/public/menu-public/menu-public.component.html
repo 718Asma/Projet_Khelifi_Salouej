@@ -1,0 +1,30 @@
+<div class="menu-container">
+  <div class="logo-container">
+    <img src="../../../../assets/logo.png" alt="logo">
+  </div>
+  <div class="weather-container">
+    <app-weather></app-weather>
+  </div>
+</div>
+<br>
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse" id="mynavbar">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="actif" routerLink="/activite">Nos Activités</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="actif" routerLink="/apropos">À propos de ConnectX</a>
+          </li>
+        </ul>
+        <form class="form-inline">
+          <input type="text" #rech class="form-control" placeholder="Rechercher" (click)="info()">
+          <div style="font-size: 10px;" class="alert alert-warning" *ngIf="ok">Rechercher une activité soit par son nom complet, sa date, sous le format "YYYY-MM-DD",<br> ou une combinaison des deux avec le nom suivi d'un slash "/" puis la date.</div>
+        </form> &nbsp;
+        <img src="/assets/search.jpg" width="35px" height="35px" (click)="rechercher(rech.value)">&nbsp; &nbsp;
+          <button class="btn btn-info" type="button" (click)="extranet()">Espace Extranet</button>
+      </div>
+    </div>
+  </nav>
+  <router-outlet></router-outlet>

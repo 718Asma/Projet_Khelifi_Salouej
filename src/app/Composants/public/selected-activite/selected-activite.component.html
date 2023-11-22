@@ -1,0 +1,24 @@
+<br>
+<div *ngIf="act" class="card" style="width: 550px; height: auto; margin: auto; border: 2px dashed black;">
+    <div class="card-header" style="border-bottom: 2px dashed black;"><strong>{{act.intitule}}</strong></div>
+    <div class="card-body">
+        <strong>Description : </strong><p style="text-align: justify;">{{act.description}}</p><br>
+        <strong>Organisée par : </strong><br><br>
+        <ul style="list-style-type: none;">
+            <li *ngFor="let p of act.lesParticipants | slice:0:2">
+                <img [src]="p.photo" class="rounded-circle" style="width:75px; height: 75px; border: 2px solid black;"/> &nbsp; {{p.nom | uppercase}} &nbsp; {{p.prenom | titlecase}} <br><br>
+            </li>
+        </ul>
+        <strong>Pour le {{act.date | date:'dd/MM/yyyy'}} {{act.lieu}}</strong><br>
+        <h3 class="badge bg-danger" *ngIf="act.complet == true">Désolé, cet événement a atteint la capacité maximale de participants.</h3><br>
+        <h3 class="badge" [ngClass]="{
+            'bg-success': act.nbParticipants <= 10,
+            'bg-warning': act.nbParticipants <= 20 && act.nbParticipants > 10,
+            'bg-danger': act.nbParticipants > 20
+          }"><strong>Nombre de participants : </strong> {{act.nbParticipants}}/30</h3><br><br>
+        <p *ngIf="!(act.complet)" style="text-align: center;"><button class="btn btn-dark" (click)="sinscrire()">S'inscrire</button></p>
+    </div>
+    <div class="card-footer" style="border-top: 2px dashed black; text-align: center;">
+        <button class="btn btn-dark" (click)="onListe()">Retour</button>
+    </div>
+</div>

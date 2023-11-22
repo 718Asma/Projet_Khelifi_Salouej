@@ -1,0 +1,22 @@
+<br>
+<div class="container">
+    <h3> Modifier votre compte </h3>
+    <br>
+    <form [formGroup]="userForm" (ngSubmit)="onSubmitForm()">
+        <div>
+            <label> Ancien mot de passe <span style="color: red;">*</span></label><br>
+            <input type="password" class="form-control" name="apwd" formControlName="apwd">
+        </div>
+        <div>
+            <label> Nouveau mot de passe <span style="color: red;">*</span></label><br>
+            <input type="password" class="form-control" name="pwd" formControlName="npwd">
+        </div>
+        <div>
+            <label> Confirmer votre nouveau mot de passe <span style="color: red;">*</span></label><br>
+            <input type="password" class="form-control" name="cnpwd" formControlName="cnpwd">
+        </div>
+        <br>
+        <p class="alert alert-danger" *ngIf="userForm.invalid">Les champs avec un astérisque * sont obligatoire !</p>
+        <input type="submit" value="Enregistrer" class="btn btn-light">
+    </form>
+</div>

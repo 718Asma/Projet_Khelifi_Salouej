@@ -1,0 +1,72 @@
+<br><br><br><br>
+<div class="login-container">
+    <div class="box">
+        <h2>Inscrivez-vous à la <br>{{act.intitule}}</h2>
+        <hr>
+        <br>
+        <form [formGroup]="participantForm" (ngSubmit)="onSubmitForm()">
+            <div class="inputBox">
+                <input type="number" name="cin" formControlName="cin" required>
+                <span>CIN</span>
+                <i></i>
+            </div>
+            <div *ngIf="isValidPattern()" class="alert alert-danger error">
+                Le champ "CIN" doit être composé 8 chiffres !
+            </div>
+            <div *ngIf="cin && cin.invalid && cin.touched" class="alert alert-danger error">
+                Le champ "CIN" est obligatoire !
+            </div>
+            <div class="inputBox">
+                <input type="text" name="nom" formControlName="nom" required>
+                <span>Nom</span>
+                <i></i>
+            </div>
+            <div *ngIf="nom && nom.invalid && nom.touched" class="alert alert-danger error">
+                Le champ "Nom" est obligatoire !
+            </div>
+            <div class="inputBox">
+                <input type="text" name="prenom" formControlName="prenom" required>
+                <span>Prénom</span>
+                <i></i>
+            </div>
+            <div *ngIf="prenom && prenom.invalid && prenom.touched" class="alert alert-danger error">
+                Le champ "Prénom" est obligatoire !
+            </div>
+            <div class="inputBox">
+                <input type="number" name="age" formControlName="age" required>
+                <span>Âge</span>
+                <i></i>
+            </div>
+            <div *ngIf="age && age.invalid && age.touched" class="alert alert-danger error">
+                Le champ "Âge" est obligatoire !
+            </div>
+            <div *ngIf="isMinAge()" class="alert alert-danger error">
+                L'âge minimal 17 ans !
+            </div>
+            <div *ngIf="isMaxAge()" class="alert alert-danger error">
+                L'âge maximal est 99 ans !
+            </div>
+            <div class="inputBox">
+                <input type="text" name="genre" formControlName="genre" required>
+                <span>Genre</span>
+                <i></i>
+            </div>
+            <div *ngIf="genre && genre.invalid && genre.touched" class="alert alert-danger error">
+                Le champ "Genre" est obligatoire !
+            </div>
+            <div class="inputBox">
+                <input type="text" name="photo" formControlName="photo" required>
+                <span>Photo</span>
+                <i></i>
+            </div>
+            <div *ngIf="photo && photo.invalid && photo.touched" class="alert alert-danger error">
+                Le champ "Photo" est obligatoire !
+            </div>
+            <br><br>
+            <button type="submit" class="btn">S'inscrire</button> &nbsp;
+            <button class="btn" (click)="onResetForm()">Effacer</button>
+        </form>
+        <br><br>
+        <p><a routerLink="/activite"> Revenir à la page d'accueil </a></p>
+    </div> 
+</div>

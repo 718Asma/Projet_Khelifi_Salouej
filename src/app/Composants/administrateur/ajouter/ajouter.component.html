@@ -1,0 +1,84 @@
+<br>
+<div class="container">
+    <h3>Ajouter une activité</h3>
+    <br>
+    <form [formGroup]="activityForm" (ngSubmit)="onSubmitForm()">
+        <div>
+            <label><strong>Intitule</strong></label><br>
+            <input type="text" class="form-control" name="intitule" formControlName="intitule">
+        </div>
+        <div *ngIf="intitule && intitule.invalid && intitule.touched" class="alert alert-danger">
+            Le champ "Intitulé" est obligatoire !
+        </div>
+        <div>
+            <label><strong> Image </strong></label><br>
+            <input type="text" class="form-control" name="image" formControlName="image">
+        </div>
+        <div *ngIf="image && image.invalid && image.touched" class="alert alert-danger">
+            Le champ "Image" est obligatoire !
+        </div>
+        <div>
+            <label><strong> Description </strong></label><br>
+            <input type="text" class="form-control" name="description" formControlName="description">
+        </div>
+        <div *ngIf="description && description.invalid && description.touched" class="alert alert-danger error">
+            Le champ "Description" est obligatoire !
+        </div>
+        <div>
+            <label><strong> Nombre de Participants </strong></label><br>
+            <input type="number" class="form-control" name="nbParticipants" formControlName="nbParticipants">
+        </div>
+        <div *ngIf="nbPartipants && nbPartipants.invalid && nbPartipants.touched" class="alert alert-danger error">
+            Le champ "Nombre de Participants" est obligatoire !
+        </div><br>
+        <div class="form-group form-check">
+            <label class="form-check-label"><strong> Complet </strong> &nbsp; 
+                <input type="checkbox" name="complet" formControlName="complet">
+            </label>
+        </div><br>
+        <div>
+            <label><strong> Date </strong></label><br>
+            <input type="date" class="form-control" name="date" formControlName="date">
+        </div>
+        <div *ngIf="date && date.invalid && date.touched" class="alert alert-danger error">
+            Le champ "Date" est obligatoire !
+        </div>
+        <div>
+            <label><strong> Lieu </strong></label><br>
+            <input type="text" class="form-control" name="lieu" formControlName="lieu">
+        </div>
+        <div *ngIf="lieu && lieu.invalid && lieu.touched" class="alert alert-danger error">
+            Le champ "Lieu" est obligatoire !
+        </div><br>
+        <hr>
+        <h3>Définition des dirigeants</h3>
+        <div formArrayName="lesParticipants">
+            <div *ngFor="let participant of participants.controls; let i = index" [formGroupName]="i">
+                <h5>Dirigeants n°{{i + 1}}</h5>
+                <label><strong>CIN</strong></label>
+                <input type="text" class="form-control" name="cin" formControlName="cin">
+                <label><strong>Nom</strong></label>
+                <input type="text" class="form-control" name="nom" formControlName="nom">
+                <label><strong>Prenom</strong></label>
+                <input type="text" class="form-control" name="prenom" formControlName="prenom">
+                <label><strong>Age</strong></label>
+                <input type="number" class="form-control" name="age" formControlName="age">
+                <label><strong>Genre</strong></label>
+                <input type="text" class="form-control" name="genre" formControlName="genre">
+                <label><strong>Photo</strong></label>
+                <input type="text" class="form-control" name="photo" formControlName="photo">
+                <hr>
+            </div>
+        </div>
+        <br>
+        <input type="button" value="Ajouter un dirigeant" class="btn btn-secondary btn-sm" (click)="onAjouter()">&nbsp;
+        <input type="button" value="Supprimer un dirigeant" class="btn btn-secondary btn-sm" (click)="onSupprimer()">
+        <br>
+        <hr>
+        <br>
+        <input type="submit" value="Enregistrer" class="btn btn-light">
+        <input type="button" value="Effacer" (click)="onResetForm()" class="btn btn-light">
+        <input type="button" value="Retour" class="btn btn-light" (click)="revenir()">
+    </form>
+</div>
+<br><br>

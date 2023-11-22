@@ -1,0 +1,9 @@
+<div style="width: 500px;" class="container mt-4" *ngIf="weatherData">
+    <h2>{{ weatherData.name }}</h2>
+    <div class="card">
+        <div class="card-body">
+            <p class="card-text"><strong>Temperature:</strong> {{ convertToCelsius(weatherData.main.temp) | number: '1.1' }}°C</p>
+            <p class="card-text"><strong> Weather : </strong>{{ weatherData.weather[0].description }}</p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,20 @@
+<div class="login-container">
+    <div class="box">
+        <h2>Connectez-vous</h2>
+        <hr>
+        <div class="inputBox">
+            <input type="text" #login required>
+            <span>Nom d'utilisateur</span>
+            <i></i>
+        </div>
+        <div class="inputBox">
+            <input type="password" #pwd required>
+            <span>Mot de passe</span>
+            <i></i>
+        </div>
+        <br><br><br>
+        <button class="btn" (click)="onLogin(login.value, pwd.value)">Se Connecter</button>
+        <br><br>
+        <p><a routerLink="/activite"> Revenir à la page d'accueil </a></p>
+    </div> 
+</div>

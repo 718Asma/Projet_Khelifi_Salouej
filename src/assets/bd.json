@@ -1,0 +1,155 @@
+{
+  "users": [
+    {
+      "username": "admin",
+      "pwd": "admin",
+      "id": 1
+    }
+  ],
+  "activites": [
+    {
+      "id": 1,
+      "intitule": "Journée Rencontres Express",
+      "image": "/assets/speed.jpg",
+      "description": "Un événement organisé avec l'objectif de favoriser des rencontres authentiques, amusantes et rapides entre les membres de notre club social. Imaginez un cadre décontracté où chacun a l'occasion de connaître plusieurs personnes en un temps limité, créant ainsi une atmosphère dynamique et propice à la découverte.",
+      "nbParticipants": 16,
+      "complet": false,
+      "date": "2023-12-01",
+      "lieu": "au restaurant",
+      "lesParticipants": [
+        {
+          "cin": 98765432,
+          "nom": "thompson",
+          "prenom": "liam",
+          "age": 21,
+          "genre": "male",
+          "photo": "/assets/Liam.jpg"
+        },
+        {
+          "cin": 80246713,
+          "nom": "turner",
+          "prenom": "isabelle",
+          "age": 19,
+          "genre": "female",
+          "photo": "/assets/Isabelle.jpg"
+        },
+        {
+          "cin": 23456789,
+          "nom": "wilson",
+          "prenom": "aiden",
+          "age": 25,
+          "genre": "male",
+          "photo": "/assets/Aiden.png"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "intitule": "Journée de bénévolat communautaire",
+      "image": "/assets/benevol.jpg",
+      "description": "Cet événement emblématique réunit les membres de notre club social autour d'une noble cause : contribuer positivement à notre communauté. Ensemble, nous consacrons une journée à l'action bénévole, mettant nos compétences et notre énergie au service de projets concrets, du nettoyage de plages, à la distribution de repas aux personnes dans le besoin.",
+      "nbParticipants": 11,
+      "complet": false,
+      "date": "2024-03-20",
+      "lieu": "à la plage",
+      "lesParticipants": [
+        {
+          "cin": 12345678,
+          "nom": "anderson",
+          "prenom": "ethan",
+          "age": 19,
+          "genre": "male",
+          "photo": "/assets/Ethan.png"
+        },
+        {
+          "cin": 65432109,
+          "nom": "johnson",
+          "prenom": "emma",
+          "age": 21,
+          "genre": "female",
+          "photo": "/assets/Emma.png"
+        },
+        {
+          "cin": 14435965,
+          "nom": "turki",
+          "prenom": "talel",
+          "age": 20,
+          "genre": "male",
+          "photo": "https://static.wikia.nocookie.net/joke-battles/images/d/df/Gigachad.png/revision/latest?cb=20230812064835"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "intitule": "Soirée masqué caritatif",
+      "image": "/assets/bal.jpg",
+      "description": "Cette soirée offre une expérience unique, alliant glamour, mystère et générosité. Plongez dans l'élégance d'une soirée masquée où chaque détail compte. Notre club social organise cet événement exceptionnel alliant charité et divertissement. Les participants sont invités à revêtir leurs masques les plus sophistiqués, créant une atmosphère envoûtante et pleine de mystère. Au-delà de l'esthétique, chaque masque représente un geste de solidarité, car cette soirée est également dédiée à la collecte de fonds pour des causes sociales importantes. ",
+      "nbParticipants": 15,
+      "complet": false,
+      "date": "2023-12-25",
+      "lieu": "à la salle de réception",
+      "lesParticipants": [
+        {
+          "cin": 87654321,
+          "nom": "davis",
+          "prenom": "noah",
+          "age": 18,
+          "genre": "male",
+          "photo": "/assets/Noah.jpg"
+        },
+        {
+          "cin": 13579246,
+          "nom": "baker",
+          "prenom": "olivia",
+          "age": 18,
+          "genre": "female",
+          "photo": "/assets/Olivia.png"
+        },
+        {
+          "cin": 23456789,
+          "nom": "wilson",
+          "prenom": "aiden",
+          "age": 20,
+          "genre": "male",
+          "photo": "/assets/Aiden.png"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "intitule": "Atelier artistique",
+      "image": "/assets/art.jpg",
+      "description": "Cet événement captivant rassemble les membres dans un espace dédié à l'inspiration artistique, où chacun peut laisser libre cours à son imagination. Que vous soyez un artiste chevronné ou que vous découvriez tout juste votre passion artistique, cet atelier offre une plateforme inclusive où la diversité des talents s'épanouit. De la peinture à la poterie en passant par la photographie, chaque participant est encouragé à explorer et partager son monde artistique unique.",
+      "nbParticipants": 30,
+      "complet": true,
+      "date": "2024-01-24",
+      "lieu": "à l'ISET",
+      "lesParticipants": [
+        {
+          "cin": 45678901,
+          "nom": "mitchell",
+          "prenom": "mason",
+          "age": 22,
+          "genre": "male",
+          "photo": "/assets/Mason.png"
+        },
+        {
+          "cin": 56473829,
+          "nom": "carter",
+          "prenom": "sophia",
+          "age": 22,
+          "genre": "female",
+          "photo": "/assets/Sophia.png"
+        },
+        {
+          "cin": 24681357,
+          "nom": "robinson",
+          "prenom": "ava",
+          "age": 20,
+          "genre": "female",
+          "photo": "/assets/Ava.jpg"
+        }
+      ]
+    }
+  ]
+}

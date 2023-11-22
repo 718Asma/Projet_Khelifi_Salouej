@@ -1,0 +1,45 @@
+<h2 style="margin: 20px;">Décembre 2023</h2>
+<table>
+    <tr>
+        <th>Lundi</th>
+        <th>Mardi</th>
+        <th>Mercredi</th>
+        <th>Jeudi</th>
+        <th>Vendredi</th>
+        <th>Samedi</th>
+        <th>Dimanche</th>
+    </tr>
+    <tr *ngFor="let week of weeks; let i = index">
+            <td *ngFor="let day of week; let j = index">
+                <br>
+                <p [ngClass]="{'nov': i == 0 && j < 4}">{{ day }}</p>
+                <br>
+                <p id="ev{{i}}_{{j}}"></p>
+                <br>
+                <p *ngIf="i==0 && j == 0"> Validation du Mini Projet : Développement d’une application de promotion des activités/ événements d’un club </p>
+                <p *ngIf="i==0 && j == 4">  Journée Rencontres Express </p>
+                <p *ngIf="i==2 && j == 4"> Réunion mi-mois</p>
+                <p *ngIf="i==4 && j == 0"> Soirée masqué caritatif </p>
+            </td>
+    </tr>
+</table>
+
+<button class="btn btn-warning" (click)="onAjouter()"><i class="fa fa-plus" aria-hidden="true"></i> Ajouter un arrangement</button>
+
+<br><br>
+
+<div *ngIf="form">
+    <h4>Enregistrer un nouvel arrangement</h4>
+    <hr>
+    <form [formGroup]="arrangementForm" (ngSubmit)="onSubmitForm()">
+        <label><strong> Date de l'arrangement </strong></label>
+        <input type="date" [value]="today" class="form-control" name="date" formControlName="date">
+        <br>
+        <label><strong> Intitulé de l'arrangement </strong></label>
+        <input type="text" class="form-control" name="intitule" formControlName="intitule">
+        <br>
+        <button type="submit" class="btn btn-light">Enregistrer</button>
+    </form>
+</div>
+
+<br><br>
