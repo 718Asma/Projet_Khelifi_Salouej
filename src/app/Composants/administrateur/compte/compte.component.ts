@@ -13,10 +13,17 @@ export class CompteComponent
 {
   constructor(private authService:AuthService, private fb:FormBuilder, private routeur:Router){}
 
+  lesUtilisateurs : User[] = [];
   userForm!: FormGroup;
 
   ngOnInit():void
   {
+    this.authService.getUsers().subscribe(
+      data => {
+        this.lesUtilisateurs = data;
+      }
+    );
+
     this.userForm = this.fb.nonNullable.group({
       apwd:[, Validators.required],
       npwd:[,Validators.required],
@@ -26,7 +33,7 @@ export class CompteComponent
 
   onSubmitForm()
   {
-    if(this.userForm.get('apwd')?.value != 'admin')
+    if(this.userForm.get('apwd')?.value != this.lesUtilisateurs[0].pwd)
     {
       alert("L'ancien mot de passe entrée est érroné !");
     }

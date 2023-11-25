@@ -35,7 +35,7 @@ const routes: Routes = [
     {path:"activity/modifier/:id", title:"Modifier Activité", component:ModifierComponent},
     {path:'ajouter', title:'Ajouter Activité', component:AjouterComponent},
     {path:'', redirectTo:'activity', pathMatch:'full'}
-  ], canActivate:[administrateurGuard]},
+  ]/*, canActivate:[administrateurGuard]*/},
   {path:'**', title:'Erreur', component:ErreurComponent}
 ];
 

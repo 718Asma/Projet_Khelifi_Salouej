@@ -83,17 +83,42 @@ export class SignupComponent implements OnInit
 
   onSubmitForm()
   {
-    let participant : Participant = this.participantForm.value;
-    let a : Activites = this.act;
-    a.nbParticipants += 1;
-    a?.lesParticipants.push(participant);
-    this.activiteservice.updateActivite(this.act?.id, a).subscribe(
-      data => {
-        console.log(data);
-        alert("Merci pour votre participation!");
-        this.routeur.navigate(['/activite']);
+    if(this.participantForm.valid)
+    {
+      let ok:boolean = true;
+      let cin = this.participantForm.get('cin')?.value;
+
+      for(let p of this.act.lesParticipants)
+      {
+        if(p.cin == cin)
+        {
+          ok = false;
+        }
       }
-    )
+      if(ok)
+      {
+        let participant : Participant = this.participantForm.value;
+        let a : Activites = this.act;
+        a.nbParticipants += 1;
+        a?.lesParticipants.push(participant);
+        this.activiteservice.updateActivite(this.act?.id, a).subscribe(
+          data => {
+            console.log(data);
+            alert("Merci pour votre participation!");
+            this.routeur.navigate(['/activite']);
+          }
+        )
+      }
+      else
+      {
+        alert('Vous êtes déjà inscrit à ' + this.act.intitule);
+      }
+      
+    }
+    else
+    {
+      alert("Veuillez remplir le formulaire d'abord!");
+    }
   }
 
   onResetForm()

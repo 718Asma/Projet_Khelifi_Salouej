@@ -37,27 +37,6 @@
             <input type="text" class="form-control" name="lieu" formControlName="lieu">
         </div>
         <br>
-        <hr>
-        <h3>Définition des participants</h3>
-        <div formArrayName="lesParticipants">
-            <div *ngFor="let participant of participantsFormArray.controls; let i = index" [formGroupName]="i">
-                <h5>Participant n°{{i + 1}}</h5>
-                <label><strong>CIN</strong></label>
-                <input type="text" class="form-control" formControlName="cin">
-                <label><strong>Nom</strong></label>
-                <input type="text" class="form-control" formControlName="nom">
-                <label><strong>Prenom</strong></label>
-                <input type="text" class="form-control" formControlName="prenom">
-                <label><strong>Age</strong></label>
-                <input type="number" class="form-control" formControlName="age">
-                <label><strong>Genre</strong></label>
-                <input type="text" class="form-control" formControlName="genre">
-                <label><strong>Photo</strong></label>
-                <input type="text" class="form-control" formControlName="photo">
-                <hr>
-            </div>
-        </div>
-        <br>
         <input type="submit" value="Enregistrer" class="btn btn-light">&nbsp;
         <input type="button" value="Retour" class="btn btn-light" (click)="revenir()">
     </form>

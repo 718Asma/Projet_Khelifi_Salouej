@@ -57,16 +57,43 @@
                 <h5>Dirigeants n°{{i + 1}}</h5>
                 <label><strong>CIN</strong></label>
                 <input type="text" class="form-control" name="cin" formControlName="cin">
+                <div *ngIf="isValidPattern()" class="alert alert-danger error">
+                    Le champ "CIN" doit être composé 8 chiffres !
+                </div>
+                <div *ngIf="cin && cin.invalid && cin.touched" class="alert alert-danger error">
+                    Le champ "CIN" est obligatoire !
+                </div>
                 <label><strong>Nom</strong></label>
                 <input type="text" class="form-control" name="nom" formControlName="nom">
-                <label><strong>Prenom</strong></label>
+                <div *ngIf="nom && nom.invalid && nom.touched" class="alert alert-danger error">
+                    Le champ "Nom" est obligatoire !
+                </div>
+                <label><strong>Prénom</strong></label>
                 <input type="text" class="form-control" name="prenom" formControlName="prenom">
+                <div *ngIf="prenom && prenom.invalid && prenom.touched" class="alert alert-danger error">
+                    Le champ "Prénom" est obligatoire !
+                </div>
                 <label><strong>Age</strong></label>
                 <input type="number" class="form-control" name="age" formControlName="age">
+                <div *ngIf="age && age.invalid && age.touched" class="alert alert-danger error">
+                    Le champ "Âge" est obligatoire !
+                </div>
+                <div *ngIf="isMinAge()" class="alert alert-danger error">
+                    L'âge minimal 17 ans !
+                </div>
+                <div *ngIf="isMaxAge()" class="alert alert-danger error">
+                    L'âge maximal est 99 ans !
+                </div>
                 <label><strong>Genre</strong></label>
                 <input type="text" class="form-control" name="genre" formControlName="genre">
+                <div *ngIf="genre && genre.invalid && genre.touched" class="alert alert-danger error">
+                    Le champ "Genre" est obligatoire !
+                </div>
                 <label><strong>Photo</strong></label>
                 <input type="text" class="form-control" name="photo" formControlName="photo">
+                <div *ngIf="photo && photo.invalid && photo.touched" class="alert alert-danger error">
+                    Le champ "Photo" est obligatoire !
+                </div>
                 <hr>
             </div>
         </div>

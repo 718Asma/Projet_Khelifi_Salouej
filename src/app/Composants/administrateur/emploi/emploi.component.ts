@@ -45,7 +45,6 @@ export class EmploiComponent
       }
       this.weeks.push(week);
     }
-    // console.log(this.weeks);
 
     this.arrangementForm = this.fb.nonNullable.group({
       date:[this.today],
