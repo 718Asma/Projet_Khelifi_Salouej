@@ -36,30 +36,40 @@ export class CompteComponent
     if(this.userForm.get('apwd')?.value != this.lesUtilisateurs[0].pwd)
     {
       alert("L'ancien mot de passe entrée est érroné !");
+      this.userForm.reset();
     }
     else if(this.userForm.get('apwd')?.value == this.userForm.get('npwd')?.value)
     {
-      alert("Votre nouveau mot de passe doit être diffèrent de votre ancien mot de passe !")
+      alert("Votre nouveau mot de passe doit être diffèrent de votre ancien mot de passe !");
+      this.userForm.reset();
     }
     else if(this.userForm.get('npwd')?.value != this.userForm.get('cnpwd')?.value)
     {
-      alert("La confirmation de  mot de passe entrée diffère du nouveau mot de passe entré !")
+      alert("La confirmation de  mot de passe entrée diffère du nouveau mot de passe entré !");
+      this.userForm.reset();
     }
     else
     {
-      let user : User = new User('admin', this.userForm.get('npwd')?.value);
-      this.authService.updateUser(1, user).subscribe(
-        data => {
-          console.log(this.userForm.value);
-          console.log(data);
-          alert("Mot de passe changé avec succès!");
-          this.routeur.navigate(['/admin']);
-        },
-        error => {
-          console.log(error);
-          alert("PROBLEM!");
-        }
-      );
+      if(this.userForm.valid)
+      {
+        let user : User = new User('admin', this.userForm.get('npwd')?.value);
+        this.authService.updateUser(1, user).subscribe(
+          data => {
+            console.log(this.userForm.value);
+            console.log(data);
+            alert("Mot de passe changé avec succès!");
+            this.routeur.navigate(['/admin']);
+          },
+          error => {
+            console.log(error);
+            alert("PROBLEM!");
+          }
+        );
+      }
+      else
+      {
+        alert("Veuillez remplir le formulaire d'abord!");
+      }
     }
     
   }

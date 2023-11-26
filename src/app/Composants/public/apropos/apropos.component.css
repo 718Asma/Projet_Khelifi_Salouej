@@ -1,16 +1,15 @@
-p
+p, li
 {
     margin-left: 50px;
     margin-right: 50px;
     text-align: justify;
     line-height: 35px;
     font-size: 25px;
+    font-family: 'Times New Roman', Times, serif;
 }
 
-.drop-cap {
-    font-size: 55px;
-    font-weight: bold;
-    float: left;
-    margin-right: 5px;
-  }
+section
+{
+    margin: 25px;
+}
   

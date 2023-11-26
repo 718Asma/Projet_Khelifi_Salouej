@@ -5,7 +5,7 @@ import { ErreurComponent } from './Composants/erreur/erreur.component';
 import { LoginComponent } from './Composants/administrateur/login/login.component';
 import { AproposComponent } from './Composants/public/apropos/apropos.component';
 import { DashAdminComponent } from './Composants/administrateur/dash-admin/dash-admin.component';
-import { administrateurGuard } from './Composants/administrateur/administrateur.guard';
+import { administrateurGuard } from './Composants/administrateur/guards/administrateur.guard';
 import { SelectedActiviteComponent } from './Composants/public/selected-activite/selected-activite.component';
 import { SignupComponent } from './Composants/public/signup/signup.component';
 import { ListActivitesComponent } from './Composants/public/list-activites/list-activites.component';
@@ -35,7 +35,7 @@ const routes: Routes = [
     {path:"activity/modifier/:id", title:"Modifier Activité", component:ModifierComponent},
     {path:'ajouter', title:'Ajouter Activité', component:AjouterComponent},
     {path:'', redirectTo:'activity', pathMatch:'full'}
-  ]/*, canActivate:[administrateurGuard]*/},
+  ], canActivate:[administrateurGuard]},
   {path:'**', title:'Erreur', component:ErreurComponent}
 ];
 

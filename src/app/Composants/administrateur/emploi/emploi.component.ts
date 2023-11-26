@@ -82,15 +82,18 @@ export class EmploiComponent
           {
             let evElement: HTMLParagraphElement | null = document.querySelector(`#ev${i}_${j}`);
 
-            if (evElement)
+            if (evElement && intitule != null)
             {
               evElement.innerText = this.toTitleCase(intitule);
+              this.form = false;
+            }
+            else
+            {
+              alert("Veuillez saisir un intitulé pour l'arrangement")
             }
           }
         }
       }
-
-      this.form = false;
     }
     else if(month == '11' && day == '27' || day == '28' || day == '29' || day == '30')
     {
@@ -100,14 +103,17 @@ export class EmploiComponent
         {
           let evElement: HTMLParagraphElement | null = document.querySelector(`#ev${0}_${j}`);
 
-          if (evElement)
+          if (evElement && intitule != null)
           {
             evElement.innerText = this.toTitleCase(intitule);
+            this.form = false;
+          }
+          else
+          {
+            alert("Veuillez saisir un intitulé pour l'arrangement")
           }
         }
       }
-
-      this.form = false;
     }
     else
     {

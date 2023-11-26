@@ -14,8 +14,7 @@
             <strong>Les Participants : </strong><br><br>
             <ul style="list-style-type: none;">
                 <ng-container *ngFor="let p of act.lesParticipants; let i = index">
-                    <ng-container *ngIf="i >= 2 && i % 2 === 0">
-                        <li>
+                        <li *ngIf="i >= 2 && i % 2 == 0">
                             <div class="row">
                                 <div class="col-md-6">
                                     <img [src]="p.photo" class="rounded-circle" style="width:75px; height: 75px; border: 2px solid black;"/> &nbsp; {{p.nom | uppercase}} {{p.prenom | titlecase}} <br><br>
@@ -25,18 +24,17 @@
                                 </div>
                             </div>
                         </li>
-                    </ng-container>
                 </ng-container>
             </ul>
         </ng-container>              
-        <h3 class="badge" [ngClass]="{
+        <p class="badge" [ngClass]="{
             'bg-success': act.nbParticipants <= 10,
             'bg-warning': act.nbParticipants <= 20 && act.nbParticipants > 10,
             'bg-danger': act.nbParticipants > 20
-          }"><strong>Nombre de participants : </strong> {{act.nbParticipants}}/30</h3><br><br>
+          }"><strong>Nombre de participants : </strong> {{act.nbParticipants}}/30</p><br><br>
     </div>
     <div class="card-footer" style="border-top: 2px dashed black; text-align: center;">
-        <button class="btn btn-dark" (click)="onListe()">Retour</button>
+        <button class="btn btn-dark" (click)="onListe()"> Retour </button>
     </div>
 </div>
 <br><br>

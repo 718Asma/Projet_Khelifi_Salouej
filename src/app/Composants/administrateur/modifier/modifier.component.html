@@ -5,19 +5,28 @@
     <form [formGroup]="activityForm"(ngSubmit)="onSubmitForm()">
         <div>
             <label><strong> Id </strong></label><br>
-            <input type="text" class="form-control" name="id" formControlName="id">
+            <input type="text" class="form-control" name="id" formControlName="id" readonly>
         </div>
         <div>
             <label><strong> Intitule </strong></label><br>
             <input type="text" class="form-control" name="intitule" formControlName="intitule">
         </div>
+        <div *ngIf="intitule && intitule.invalid && intitule.touched" class="alert alert-danger">
+            Le champ "Intitulé" est obligatoire !
+        </div>
         <div>
             <label><strong> Image </strong></label><br>
             <input type="text" class="form-control" name="image" formControlName="image">
         </div>
+        <div *ngIf="image && image.invalid && image.touched" class="alert alert-danger">
+            Le champ "Image" est obligatoire !
+        </div>
         <div>
             <label><strong> Description </strong></label><br>
             <input type="text" class="form-control" name="description" formControlName="description">
+        </div>
+        <div *ngIf="description && description.invalid && description.touched" class="alert alert-danger">
+            Le champ "Description" est obligatoire !
         </div>
         <div>
             <label><strong> Nombre de Participants </strong></label><br>
@@ -32,9 +41,15 @@
             <label><strong> Date </strong></label><br>
             <input type="date" class="form-control" name="date" formControlName="date">
         </div>
+        <div *ngIf="date && date.invalid && date.touched" class="alert alert-danger">
+            Le champ "Date" est obligatoire !
+        </div>
         <div>
             <label><strong> Lieu </strong></label><br>
             <input type="text" class="form-control" name="lieu" formControlName="lieu">
+        </div>
+        <div *ngIf="lieu && lieu.invalid && lieu.touched" class="alert alert-danger">
+            Le champ "Lieu" est obligatoire !
         </div>
         <br>
         <input type="submit" value="Enregistrer" class="btn btn-light">&nbsp;

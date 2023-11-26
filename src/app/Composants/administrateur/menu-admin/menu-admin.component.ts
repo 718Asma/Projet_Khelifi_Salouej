@@ -23,11 +23,8 @@ export class MenuAdminComponent
 
   rechercher(name:string)
   {
-    console.log(name);
-
     this.activiteservice.getActiviteByName(name).subscribe(
       data => {
-        console.log(data);
         if (data[0].id !== undefined)
         {
           const id: number = data[0].id;

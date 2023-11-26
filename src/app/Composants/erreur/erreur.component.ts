@@ -6,7 +6,9 @@ import { Router } from '@angular/router';
   templateUrl: './erreur.component.html',
   styleUrls: ['./erreur.component.css']
 })
-export class ErreurComponent {
+
+export class ErreurComponent
+{
   constructor(private routeur:Router){}
 
   revenir()

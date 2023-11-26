@@ -68,7 +68,7 @@
         {
           "cin": 83749562,
           "nom": "jones",
-          "prenom":"bridget",
+          "prenom": "bridget",
           "age": 23,
           "genre": "female",
           "photo": "/assets/m7.jpg"
@@ -160,7 +160,7 @@
       "intitule": "Journée de bénévolat communautaire",
       "image": "/assets/benevol.jpg",
       "description": "Cet événement emblématique réunit les membres de notre club social autour d'une noble cause : contribuer positivement à notre communauté. Ensemble, nous consacrons une journée à l'action bénévole, mettant nos compétences et notre énergie au service de projets concrets, du nettoyage de plages, à la distribution de repas aux personnes dans le besoin.",
-      "nbParticipants": 12,
+      "nbParticipants": 9,
       "complet": false,
       "date": "2024-03-20",
       "lieu": "à la plage",
@@ -196,30 +196,6 @@
           "age": 31,
           "genre": "female",
           "photo": "/assets/m1.jpg"
-        },
-        {
-          "cin": 94062351,
-          "nom": "Rodriguez",
-          "prenom": "David",
-          "age": 29,
-          "genre": "male",
-          "photo": "/assets/1.png"
-        },
-        {
-          "cin": 71936584,
-          "nom": "miller",
-          "prenom": "andrew",
-          "age": 20,
-          "genre": "male",
-          "photo": "/assets/4.jpg"
-        },
-        {
-          "cin": 82514963,
-          "nom": "garcia",
-          "prenom": "sophia",
-          "age": 25,
-          "genre": "female",
-          "photo": "/assets/m4.jpg"
         },
         {
           "cin": 90473516,
@@ -260,7 +236,7 @@
           "age": 22,
           "genre": "female",
           "photo": "/assets/m5.jpg"
-        } 
+        }
       ]
     },
     {
@@ -268,7 +244,7 @@
       "intitule": "Soirée masqué caritatif",
       "image": "/assets/bal.jpg",
       "description": "Cette soirée offre une expérience unique, alliant glamour, mystère et générosité. Plongez dans l'élégance d'une soirée masquée où chaque détail compte. Notre club social organise cet événement exceptionnel alliant charité et divertissement. Les participants sont invités à revêtir leurs masques les plus sophistiqués, créant une atmosphère envoûtante et pleine de mystère. Au-delà de l'esthétique, chaque masque représente un geste de solidarité, car cette soirée est également dédiée à la collecte de fonds pour des causes sociales importantes. ",
-      "nbParticipants": 15,
+      "nbParticipants": 18,
       "complet": false,
       "date": "2023-12-25",
       "lieu": "à la salle de réception",
@@ -288,6 +264,30 @@
           "age": 18,
           "genre": "female",
           "photo": "/assets/Olivia.png"
+        },
+        {
+          "cin": 94062351,
+          "nom": "Rodriguez",
+          "prenom": "David",
+          "age": 29,
+          "genre": "male",
+          "photo": "/assets/1.png"
+        },
+        {
+          "cin": 71936584,
+          "nom": "miller",
+          "prenom": "andrew",
+          "age": 20,
+          "genre": "male",
+          "photo": "/assets/4.jpg"
+        },
+        {
+          "cin": 82514963,
+          "nom": "garcia",
+          "prenom": "sophia",
+          "age": 25,
+          "genre": "female",
+          "photo": "/assets/m4.jpg"
         },
         {
           "cin": 34567890,
@@ -324,7 +324,7 @@
         {
           "cin": 83749562,
           "nom": "jones",
-          "prenom":"bridget",
+          "prenom": "bridget",
           "age": 23,
           "genre": "female",
           "photo": "/assets/m7.jpg"
@@ -528,7 +528,7 @@
         {
           "cin": 83749562,
           "nom": "jones",
-          "prenom":"bridget",
+          "prenom": "bridget",
           "age": 23,
           "genre": "female",
           "photo": "/assets/m7.jpg"

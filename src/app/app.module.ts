@@ -9,7 +9,6 @@ import { MenuAdminComponent } from './Composants/administrateur/menu-admin/menu-
 import { MenuPublicComponent } from './Composants/public/menu-public/menu-public.component';
 import { DashboardPublicComponent } from './Composants/public/dashboard-public/dashboard-public.component';
 import { ActivitesComponent } from './Composants/public/activites/activites.component';
-import { AccueilComponent } from './Composants/public/accueil/accueil.component';
 import { AproposComponent } from './Composants/public/apropos/apropos.component';
 import { DashAdminComponent } from './Composants/administrateur/dash-admin/dash-admin.component';
 import { SelectedActiviteComponent } from './Composants/public/selected-activite/selected-activite.component';
@@ -36,7 +35,6 @@ import { EmploiComponent } from './Composants/administrateur/emploi/emploi.compo
     MenuPublicComponent,
     DashboardPublicComponent,
     ActivitesComponent,
-    AccueilComponent,
     AproposComponent,
     DashAdminComponent,
     SelectedActiviteComponent,

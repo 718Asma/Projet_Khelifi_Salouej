@@ -9,7 +9,8 @@ import { ActiviteService } from 'src/app/Services/activite.service';
   templateUrl: './ajouter.component.html',
   styleUrls: ['./ajouter.component.css']
 })
-export class AjouterComponent {
+export class AjouterComponent
+{
   today: string = new Date().toISOString().split('T')[0];
 
   activityForm!: FormGroup;
@@ -22,7 +23,8 @@ export class AjouterComponent {
     private fb: FormBuilder
   ) {}
 
-  ngOnInit(): void {
+  ngOnInit(): void
+  {
     this.activiteservice.getActivites().subscribe(
       (data) => {
         this.lesActivites = data;
@@ -33,94 +35,97 @@ export class AjouterComponent {
       intitule: ['', Validators.required],
       image: ['', Validators.required],
       description: ['', Validators.required],
-      nbParticipants: ['', Validators.required],
-      complet: ['', Validators.required],
-      date: [this.today, Validators.required],
+      nbParticipants: [0, Validators.required],
+      complet: [''],
+      date: [this.today],
       lieu: ['', Validators.required],
       lesParticipants: this.fb.array([])
     });
-
-    this.participantForm = this.fb.group({
-      cin: [, [Validators.required, Validators.pattern('[0-9]{8}')]],
-      nom: [, Validators.required],
-      prenom: [, Validators.required],
-      age: [, [Validators.required, Validators.min(17), Validators.max(99)]],
-      genre: [, Validators.required],
-      photo: [, Validators.required]
-    });
   }
 
-  get intitule() {
+  get intitule()
+  {
     return this.activityForm.get('intitule');
   }
 
-  get image() {
+  get image()
+  {
     return this.activityForm.get('image');
   }
 
-  get description() {
+  get description()
+  {
     return this.activityForm.get('description');
   }
 
-  get nbPartipants() {
+  get nbParticipants()
+  {
     return this.activityForm.get('nbParticipants');
   }
 
-  get complet() {
-    return this.activityForm.get('complet');
-  }
-
-  get date() {
+  get date()
+  {
     return this.activityForm.get('date');
   }
 
-  get lieu() {
+  get lieu()
+  {
     return this.activityForm.get('lieu');
   }
 
-  get participants() {
+  get participants()
+  {
     return this.activityForm.get('lesParticipants') as FormArray;
   }
 
-  get cin() {
+  get cin()
+  {
     return this.participantForm.get('cin');
   }
 
-  isValidPattern() {
+  isValidPattern()
+  {
     return this.cin?.errors?.['pattern'] && this.cin?.dirty;
   }
 
-  get nom() {
+  get nom()
+  {
     return this.participantForm.get('nom');
   }
 
-  get prenom() {
+  get prenom()
+  {
     return this.participantForm.get('prenom');
   }
 
-  get age() {
+  get age()
+  {
     return this.participantForm.get('age');
   }
 
-  isMinAge() {
+  isMinAge()
+  {
     return this.age?.errors?.['min'];
   }
 
-  isMaxAge() {
+  isMaxAge()
+  {
     return this.age?.errors?.['max'];
   }
 
-  get genre() {
+  get genre()
+  {
     return this.participantForm.get('genre');
   }
 
-  get photo() {
+  get photo()
+  {
     return this.participantForm.get('photo');
   }
 
   onSubmitForm()
   {
-    if(this.activityForm.valid && this.participantForm.valid)
+    if(this.activityForm.valid)
     {
       let act: Activites = this.activityForm.value;
       this.activiteservice.addActivite(act).subscribe(
@@ -149,21 +154,28 @@ export class AjouterComponent {
 
   onAjouter()
   {
-    const participantGroup = this.fb.group({
-      cin: this.participantForm.get('cin'),
-      nom: this.participantForm.get('nom'),
-      prenom: this.participantForm.get('prenom'),
-      age: this.participantForm.get('age'),
-      genre: this.participantForm.get('genre'),
-      photo: this.participantForm.get('photo')
-    });
+    this.participants.push(
+      this.participantForm = this.fb.group({
+        cin: [, [Validators.required, Validators.pattern('[0-9]{8}')]],
+        nom: [, Validators.required],
+        prenom: [, Validators.required],
+        age: [, [Validators.required, Validators.min(17), Validators.max(99)]],
+        genre: [, Validators.required],
+        photo: [, Validators.required]
+      })
+    );
 
-    this.participants.push(participantGroup);
+    this.activityForm.get('nbParticipants')?.setValue(this.participants.length); 
   }
 
   onSupprimer()
   {
-    this.participants.clear();
+    if (this.participants.length > 0)
+    {
+      this.participants.removeAt(this.participants.length - 1);
+    }
+    
+    this.activityForm.get('nbParticipants')?.setValue(this.participants.length); 
   }
 
   revenir()
