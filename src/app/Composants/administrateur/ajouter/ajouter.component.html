@@ -83,14 +83,12 @@
                 </div>
                 <div *ngIf="isMaxAge()" class="alert alert-danger error">
                     L'âge maximal est 99 ans !
-                </div>
-                <label><strong>Genre</strong></label>
-                <input type="text" class="form-control" name="genre" formControlName="genre">
+                </div><br>
+                <label><strong>Genre</strong></label><br>
+                <input type="radio" value="male" name="genre" formControlName="genre"> Male
+                <input type="radio" value="female" name="genre" formControlName="genre"> Female <br>
                 <div *ngIf="genre && genre.invalid && genre.touched" class="alert alert-danger error">
                     Le champ "Genre" est obligatoire !
-                </div>
-                <div *ngIf="genre && genre.touched && (genre.value != 'male' || genre.value != 'female')" class="alert alert-danger error">
-                    Le genre ne peut être que male ou female !
                 </div>
                 <label><strong>Photo</strong></label>
                 <input type="text" class="form-control" name="photo" formControlName="photo">

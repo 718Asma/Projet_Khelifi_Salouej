@@ -54,6 +54,9 @@
             <div *ngIf="genre && genre.invalid && genre.touched" class="alert alert-danger error">
                 Le champ "Genre" est obligatoire !
             </div>
+            <div *ngIf="genre && genre.touched && (genre.value != 'male' || genre.value != 'female')" class="alert alert-danger error">
+                Le genre ne peut être que male ou female !
+            </div>
             <div class="inputBox">
                 <input type="text" name="photo" formControlName="photo" required>
                 <span>Photo</span>

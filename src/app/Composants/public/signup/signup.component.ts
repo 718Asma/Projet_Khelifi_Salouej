@@ -83,7 +83,7 @@ export class SignupComponent implements OnInit
 
   onSubmitForm()
   {
-    if(this.participantForm.valid)
+    if(this.participantForm.valid && (this.genre?.value == 'male' || this.genre?.value == 'female'))
     {
       let ok:boolean = true;
       let cin = this.participantForm.get('cin')?.value;

@@ -125,8 +125,7 @@ export class AjouterComponent
 
   onSubmitForm()
   {
-    console.log(this.genre?.value);
-    if(this.activityForm.valid && (this.genre?.value == 'male' || this.genre?.value == 'female'))
+    if(this.activityForm.valid)
     {
       let act: Activites = this.activityForm.value;
       this.activiteservice.addActivite(act).subscribe(
